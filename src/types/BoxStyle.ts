@@ -1,0 +1,3 @@
+interface BoxStyle {
+  borderColor: string;
+}

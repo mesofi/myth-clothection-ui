@@ -7,8 +7,27 @@ import { siteConfig } from "@/config/site";
 import { title, subtitle } from "@/components/primitives";
 import { GithubIcon } from "@/components/icons";
 import DefaultLayout from "@/layouts/default";
+import axios from "axios";
+import React, { useState } from "react";
+import {
+  Table,
+  TableHeader,
+  TableColumn,
+  TableBody,
+  TableRow,
+  TableCell,
+} from "@nextui-org/table";
+import MythClothBox from "@/components/MythClothBox";
 
 export default function IndexPage() {
+  const [characters, setCharacters] = useState([]);
+
+  React.useEffect(() => {
+    axios.get("http://127.0.0.1:8080/characters").then((response) => {
+      setCharacters(response.data);
+    });
+  }, []);
+
   return (
     <DefaultLayout>
       <section className="flex flex-col items-center justify-center gap-4 py-8 md:py-10">
@@ -53,6 +72,31 @@ export default function IndexPage() {
               <Code color="primary">pages/index.tsx</Code>
             </span>
           </Snippet>
+        </div>
+        <div className="mt-8">
+          <MythClothBox borderColor="#111111" />
+          <Table aria-label="Example static collection table">
+            <TableHeader>
+              <TableColumn>Id</TableColumn>
+              <TableColumn>Box</TableColumn>
+              <TableColumn>Name</TableColumn>
+              <TableColumn>Price</TableColumn>
+            </TableHeader>
+            <TableBody>
+              {characters.map((figure: MythCharacterFigure) => {
+                return (
+                  <TableRow key={figure.id}>
+                    <TableCell>{figure.id}</TableCell>
+                    <TableCell>
+                      <MythClothBox borderColor={figure.boxStyle.borderColor} />
+                    </TableCell>
+                    <TableCell>{figure.officialName}</TableCell>
+                    <TableCell>{figure.distributionJPY.releasePrice}</TableCell>
+                  </TableRow>
+                );
+              })}
+            </TableBody>
+          </Table>
         </div>
       </section>
     </DefaultLayout>
