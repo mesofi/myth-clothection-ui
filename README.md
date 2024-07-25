@@ -1,3 +1,9 @@
+# MythCLoth
+
+To create this project from scratch, please follow this link:
+[here](https://nextui.org/docs/guide/cli)
+
+
 # Vite & NextUI Template
 
 This is a template for creating applications using Vite and NextUI (v2).
