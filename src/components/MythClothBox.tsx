@@ -1,9 +1,17 @@
-function MythClothBox({ borderColor }: { borderColor: string }) {
+function MythClothBox({
+  boxWidth,
+  boxHeight,
+  borderColor,
+}: {
+  boxWidth: number;
+  boxHeight: number;
+  borderColor: string;
+}) {
   console.log(borderColor);
   return (
     <svg
-      width={210}
-      height={250}
+      width={boxWidth}
+      height={boxHeight}
       style={{ border: "blue solid" }}
       xmlns="http://www.w3.org/2000/svg"
     >

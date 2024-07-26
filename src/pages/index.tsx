@@ -74,7 +74,6 @@ export default function IndexPage() {
           </Snippet>
         </div>
         <div className="mt-8">
-          <MythClothBox borderColor="#111111" />
           <Table aria-label="Example static collection table">
             <TableHeader>
               <TableColumn>Id</TableColumn>
@@ -88,7 +87,11 @@ export default function IndexPage() {
                   <TableRow key={figure.id}>
                     <TableCell>{figure.id}</TableCell>
                     <TableCell>
-                      <MythClothBox borderColor={figure.boxStyle.borderColor} />
+                      <MythClothBox
+                        boxWidth={figure.boxStyle.width}
+                        boxHeight={figure.boxStyle.height}
+                        borderColor={figure.boxStyle.borderColor}
+                      />
                     </TableCell>
                     <TableCell>{figure.officialName}</TableCell>
                     <TableCell>{figure.distributionJPY.releasePrice}</TableCell>
