@@ -7,7 +7,7 @@ function MythClothBox({ boxStyle }: { boxStyle: BoxStyle }) {
     >
       // backgroud
       <filter id="bgFilter">
-        <feTurbulence baseFrequency={0.27} />
+        <feTurbulence baseFrequency={0.3} />
         <feColorMatrix
           values="0 0 0 9 -4
                   0 0 0 9 -4
@@ -55,28 +55,28 @@ function MythClothBox({ boxStyle }: { boxStyle: BoxStyle }) {
         width={boxStyle.width}
         height={boxStyle.height}
         preserveAspectRatio="none"
-        href="seiya.png"
+        href="characters/Pegasus Seiya.png"
       />
       <image
         x={27}
         y={188}
         width={150}
         preserveAspectRatio="none"
-        href="logo.png"
+        href="boxStyle/mythcloth-logo.png"
       />
       <image
         x={20}
         y={20}
         width={50}
         preserveAspectRatio="none"
-        href="logo-series.png"
+        href="boxStyle/classic-series-logo.png"
       />
       <image
         x={170}
         y={223}
         width={23}
         preserveAspectRatio="none"
-        href="bandai.png"
+        href="boxStyle/bandai-logo-red.png"
       />
     </svg>
   );
