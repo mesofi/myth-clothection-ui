@@ -1,4 +1,12 @@
-function MythClothBox({ boxStyle }: { boxStyle: BoxStyle }) {
+function MythClothBox({
+  characterName,
+  boxStyle,
+}: {
+  characterName: string;
+  boxStyle: BoxStyle;
+}) {
+  const myhCharacterName = "characters/" + characterName + ".png";
+
   return (
     <svg
       width={boxStyle.width}
@@ -55,7 +63,7 @@ function MythClothBox({ boxStyle }: { boxStyle: BoxStyle }) {
         width={boxStyle.width}
         height={boxStyle.height}
         preserveAspectRatio="none"
-        href="characters/Pegasus Seiya.png"
+        href={myhCharacterName}
       />
       <image
         x={27}

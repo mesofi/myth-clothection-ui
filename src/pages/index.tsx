@@ -87,7 +87,10 @@ export default function IndexPage() {
                   <TableRow key={figure.id}>
                     <TableCell>{figure.id}</TableCell>
                     <TableCell>
-                      <MythClothBox boxStyle={figure.boxStyle} />
+                      <MythClothBox
+                        characterName={figure.officialName}
+                        boxStyle={figure.boxStyle}
+                      />
                     </TableCell>
                     <TableCell>{figure.officialName}</TableCell>
                     <TableCell>{figure.distributionJPY.releasePrice}</TableCell>
