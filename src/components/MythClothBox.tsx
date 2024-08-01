@@ -1,3 +1,5 @@
+import "../styles/myth-cloth-styles.css";
+
 function MythClothBox({
   characterName,
   boxStyle,
@@ -58,12 +60,13 @@ function MythClothBox({
         d="M19 244 H181 V236 H189"
         fill="none"
       />
+      // The actual character.
       <image
-        x={50}
-        width={boxStyle.width}
-        height={boxStyle.height}
+        x={80}
+        width={118}
         preserveAspectRatio="none"
         href={myhCharacterName}
+        className="border-shadow"
       />
       <image
         x={27}
@@ -84,7 +87,7 @@ function MythClothBox({
         y={223}
         width={23}
         preserveAspectRatio="none"
-        href="boxStyle/bandai-logo-red.png"
+        href="boxStyle/bandai-red-logo.png"
       />
     </svg>
   );

@@ -42,7 +42,6 @@ export default function IndexPage() {
             Beautiful, fast and modern React UI library.
           </h4>
         </div>
-
         <div className="flex gap-3">
           <Link
             isExternal
@@ -64,7 +63,6 @@ export default function IndexPage() {
             GitHub
           </Link>
         </div>
-
         <div className="mt-8">
           <Snippet hideCopyButton hideSymbol variant="bordered">
             <span>
@@ -73,6 +71,10 @@ export default function IndexPage() {
             </span>
           </Snippet>
         </div>
+        <MythClothBox
+          characterName={theFigure.officialName}
+          boxStyle={theFigure.boxStyle}
+        />
         <div className="mt-8">
           <Table aria-label="Example static collection table">
             <TableHeader>
